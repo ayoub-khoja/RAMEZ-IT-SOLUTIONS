@@ -12,7 +12,7 @@ export function IconBadge({ icon: Icon, tone = "brand", className }: IconBadgePr
     <span
       className={cn(
         "inline-flex size-12 shrink-0 items-center justify-center rounded-2xl",
-        tone === "brand" && "bg-brand-50 text-brand-500 ring-1 ring-brand-100",
+        tone === "brand" && "bg-brand-gradient text-white shadow-lg shadow-violet-brand/25",
         tone === "light" && "bg-white/10 text-brand-300 ring-1 ring-white/15",
         className,
       )}

@@ -16,7 +16,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="bg-slate-50 py-24 sm:py-28">
+    <section id="contact" className="bg-mesh-light py-12 sm:py-16">
       <Container className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
         <div>
           <SectionHeading
@@ -29,7 +29,7 @@ export function Contact() {
           <ul className="mt-10 space-y-5">
             {contactDetails.map((detail) => (
               <li key={detail.label} className="flex items-center gap-4">
-                <IconBadge icon={detail.icon} className="bg-white" />
+                <IconBadge icon={detail.icon} />
                 <div>
                   <p className="text-xs font-semibold tracking-wide text-navy-500 uppercase">{detail.label}</p>
                   {detail.href ? (

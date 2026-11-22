@@ -21,6 +21,7 @@ export function SectionHeading({
 
   return (
     <div
+      data-reveal
       className={cn(
         "max-w-2xl",
         align === "center" && "mx-auto text-center",
@@ -30,7 +31,7 @@ export function SectionHeading({
       <p
         className={cn(
           "inline-flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase",
-          isLight ? "text-brand-300" : "text-brand-500",
+          isLight ? "text-cyan-300" : "text-violet-brand",
         )}
       >
         <span className="h-px w-6 bg-current" aria-hidden />

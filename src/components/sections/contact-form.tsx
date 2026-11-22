@@ -28,6 +28,12 @@ export function ContactForm() {
 
   return (
     <form action={formAction} noValidate className="grid gap-5 sm:grid-cols-2">
+      {/* Champ caché anti-robots : ne pas supprimer */}
+      <div aria-hidden className="absolute -left-[9999px]">
+        <label htmlFor="website">Ne pas remplir</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <Field label="Nom complet" htmlFor="name" error={errors.name}>
         <Input
           id="name"

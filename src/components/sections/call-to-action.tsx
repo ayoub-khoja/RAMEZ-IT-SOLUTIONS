@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/container";
 
 export function CallToAction() {
   return (
-    <section className="pb-24 sm:pb-28">
+    <section className="pb-12 sm:pb-16">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-500 via-brand-600 to-navy-900 px-6 py-16 text-center sm:px-16 sm:py-20">
+        <div className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-500 via-violet-brand to-navy-900 shadow-2xl shadow-violet-brand/30 px-6 py-16 text-center sm:px-16 sm:py-20">
           <div className="bg-grid-dark absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
           <h2 className="mx-auto max-w-2xl text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
             Prêt à donner vie à votre projet digital ?

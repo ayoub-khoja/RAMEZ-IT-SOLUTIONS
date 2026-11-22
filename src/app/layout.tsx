@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ScrollReveal } from "@/components/layout/scroll-reveal";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -14,27 +16,38 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: siteConfig.seoTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "développement web",
-    "application mobile",
-    "marketing digital",
-    "création site internet",
-    "agence digitale",
-    "RAMEZ IT Solutions",
-  ],
+  keywords: [...siteConfig.keywords],
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: siteConfig.url,
+    alternateLocale: ["fr_TN"],
+    url: "/",
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: siteConfig.seoTitle,
     description: siteConfig.description,
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seoTitle,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  // Collez ici le code de Google Search Console quand vous l'avez :
+  // verification: { google: "VOTRE_CODE" },
 };
 
 export const viewport: Viewport = {
@@ -43,7 +56,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={jakarta.variable}>
+    <html lang="fr" className={jakarta.variable} suppressHydrationWarning>
+      <head>
+        {/* Indique au CSS que JavaScript est actif (pour les animations au défilement). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="flex min-h-dvh flex-col font-sans">
         <a
           href="#contenu"
@@ -56,6 +73,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
+        <ScrollReveal />
       </body>
     </html>
   );

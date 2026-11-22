@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Technologies() {
   return (
-    <section id="technologies" className="py-24 sm:py-28">
+    <section id="technologies" className="py-12 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow="Technologies"
@@ -12,11 +12,11 @@ export function Technologies() {
           description="Nous sélectionnons les technologies les plus adaptées à votre projet pour garantir performance, sécurité et pérennité."
         />
 
-        <ul className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-3">
+        <ul data-reveal className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-3">
           {technologies.map((technology) => (
             <li
               key={technology}
-              className="rounded-full border border-navy-900/10 bg-white px-5 py-2.5 text-sm font-semibold text-navy-700 shadow-sm transition-colors duration-200 hover:border-brand-300 hover:text-brand-600"
+              className="rounded-full border border-navy-900/10 bg-white px-5 py-2.5 text-sm font-semibold text-navy-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 hover:text-violet-700 hover:shadow-md hover:shadow-violet-brand/10"
             >
               {technology}
             </li>
