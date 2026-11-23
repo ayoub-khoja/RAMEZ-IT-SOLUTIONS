@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollReveal } from "@/components/layout/scroll-reveal";
+import { SiteChrome } from "@/components/layout/site-chrome";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import "./globals.css";
 
@@ -68,13 +69,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Aller au contenu
         </a>
-        <Header />
-        <main id="contenu" className="flex-1">
+        <SiteChrome
+          header={<Header />}
+          footer={<Footer />}
+          extras={
+            <>
+              <WhatsAppButton />
+              <ScrollReveal />
+            </>
+          }
+        >
           {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
-        <ScrollReveal />
+        </SiteChrome>
       </body>
     </html>
   );

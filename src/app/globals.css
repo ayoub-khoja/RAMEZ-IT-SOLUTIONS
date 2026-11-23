@@ -133,6 +133,11 @@
   background-size: 48px 48px;
 }
 
+/* Espace admin : on masque l'en-tête et le pied de page du site */
+body:has([data-admin-root]) .site-chrome {
+  display: none;
+}
+
 /* Apparition au défilement (activée seulement si JavaScript fonctionne) */
 .js [data-reveal]:not(.is-visible) {
   opacity: 0;
