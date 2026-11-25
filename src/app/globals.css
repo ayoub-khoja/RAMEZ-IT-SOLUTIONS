@@ -126,11 +126,23 @@
   background-size: 48px 48px;
 }
 
+/* Trame de points (fonds sombres) : plus « tech » que des carreaux */
 @utility bg-grid-dark {
-  background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-image: radial-gradient(rgb(255 255 255 / 0.13) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+
+/* Courbe de croissance du haut de page : se dessine à l'arrivée */
+.hero-curve-draw {
+  stroke-dasharray: 2200;
+  stroke-dashoffset: 2200;
+  animation: hero-curve-draw 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+@keyframes hero-curve-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Espace admin : on masque l'en-tête et le pied de page du site */
@@ -155,6 +167,10 @@ body:has([data-admin-root]) .site-chrome {
 
   .js [data-reveal]:not(.is-visible) {
     opacity: 1;
+  }
+
+  .hero-curve-draw {
+    stroke-dashoffset: 0;
   }
 
   *,

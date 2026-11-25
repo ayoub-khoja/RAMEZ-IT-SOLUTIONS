@@ -2,6 +2,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Hero } from "@/components/sections/hero";
 import { ClientsStrip } from "@/components/sections/clients-strip";
 import { Services } from "@/components/sections/services";
+import { Showcase } from "@/components/sections/showcase";
 import { Portfolio } from "@/components/sections/portfolio";
 import { WhyUs } from "@/components/sections/why-us";
 import { Process } from "@/components/sections/process";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <JsonLd />
       <Hero />
       <ClientsStrip />
+      <Showcase />
       <Portfolio />
       <Services />
       <WhyUs />

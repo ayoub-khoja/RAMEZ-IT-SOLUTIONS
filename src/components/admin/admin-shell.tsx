@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, FileText, Inbox, LayoutDashboard, LogOut, MessageSquare } from "lucide-react";
+import { ExternalLink, FileText, Inbox, LayoutDashboard, LogOut, MessageSquare, QrCode } from "lucide-react";
 import { logout } from "@/actions/admin";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
@@ -11,6 +11,7 @@ const navigation = [
   { href: "/admin?statut=nouveau", label: "Nouveaux", icon: Inbox, key: "nouveau" },
   { href: "/admin?type=devis", label: "Devis", icon: FileText, key: "devis" },
   { href: "/admin?type=message", label: "Messages", icon: MessageSquare, key: "message" },
+  { href: "/admin/qr-code", label: "QR code", icon: QrCode, key: "qrcode" },
 ] as const;
 
 export type AdminNavKey = (typeof navigation)[number]["key"] | "none";

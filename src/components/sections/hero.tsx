@@ -1,19 +1,17 @@
 import { ArrowRight, CircleCheck, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { HeroShowcase } from "./hero-showcase";
+import { HeroBackdrop } from "./hero-backdrop";
+import { HeroVideo } from "./hero-video";
 
 const trustPoints = ["Devis gratuit sous 24h", "Solutions sur mesure", "Accompagnement de A à Z"];
 
 export function Hero() {
   return (
     <section className="bg-mesh-dark relative isolate overflow-hidden text-white">
-      <div
-        className="bg-grid-dark absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"
-        aria-hidden
-      />
+      <HeroBackdrop />
 
-      <Container className="grid items-center gap-14 pt-14 pb-28 sm:pt-20 lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:pt-20 lg:pb-32">
+      <Container className="grid items-center gap-14 pt-14 pb-28 sm:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:pt-20 lg:pb-32">
         <div className="animate-fade-up">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/85 backdrop-blur">
             <Sparkles className="size-4 text-cyan-brand" aria-hidden />
@@ -49,7 +47,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <HeroShowcase />
+        <HeroVideo />
       </Container>
 
       {/* Vague de transition vers la section suivante */}
